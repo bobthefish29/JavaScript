@@ -17,7 +17,7 @@ p1.x = 0 + p1.w/2
 var p2 = new Box();
 p2.w = 20
 p2.h = 150
-p1.x = 0 + p2.w/2
+p2.x = c.width - p2.w/2
 
 //ball setup
 var ball = new Box();
@@ -44,6 +44,7 @@ function main()
     }
     //applies friction
     p1.vy *= fy
+    p2.vy *= fy
     //player movement
 
     //this is for p2 moving
@@ -69,10 +70,12 @@ function main()
     if(p1.y < 0+p1.h/2)
     {
         p1.y = 0+p1.h/2
+        p1.vy = 0
     }
     if(p1.y > c.height-p1.h/2)
     {
         p1.y = c.height-p1.h/2
+        p1.vy = 0
     }
 
 
