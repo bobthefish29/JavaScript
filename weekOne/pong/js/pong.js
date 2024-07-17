@@ -48,14 +48,14 @@ function main()
     //player movement
 
     //this is for p2 moving
-    if(keys[`i`]){
+    if(keys[`ArrowUp`]){
         p2.vy += -p2.force
     }
 
-    if(keys[`k`]){
+    if(keys[`ArrowDown`]){
         p2.vy += p2.force
     }
-
+    
 
     p1.move();
     p2.move();
