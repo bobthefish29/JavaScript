@@ -75,7 +75,7 @@ function main()
     {
         ball.y = c.height
         ball.vy = -ball.vy
-       
+    
     }
 
     //p1 with ball collision

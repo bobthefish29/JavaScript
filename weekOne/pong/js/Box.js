@@ -34,6 +34,7 @@ class Box
 
     collide(obj)
     {
+        //this is bounding box colide, 
         if(
             this.right() > obj.left() &&
             this.left() < obj.right() &&
