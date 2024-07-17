@@ -58,7 +58,6 @@ function main()
 
 
     p1.move();
-
     p2.move();
 
     
@@ -78,7 +77,7 @@ function main()
         p1.vy = 0
     }
 
-
+    //p2 collision
     if(p2.y < 0 +p1.h/2){
         p2.y = 0+p1.h/2;
         p2.vy = 0
@@ -99,8 +98,9 @@ function main()
     }
     if(ball.x > c.width)
     {
-        ball.x = c.width
-        ball.vx = -ball.vx
+        ball.x = c.width/2
+        ball.y  = c.height/2
+        
     }
     if(ball.y < 0)
     {
@@ -131,8 +131,6 @@ function main()
 
     //draw the objects
     p1.draw()
-    ball.draw()
-
-
     p2.draw()
+    ball.draw()
 }
