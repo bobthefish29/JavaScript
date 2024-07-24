@@ -81,7 +81,6 @@ function rand(low, high){
 function main()
 {
 
-    state[`play`]
     //erases the canvas
     ctx.clearRect(0,0,c.width,c.height)
     
