@@ -197,6 +197,5 @@ function main(){
 //this is just to make the movement random
 function rand(low, high){
 
-    //
     return Math.random() * (high - low) + low;
 }
