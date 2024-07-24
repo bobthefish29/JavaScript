@@ -34,6 +34,11 @@ var pad = []
 pad[0] = player[0].pad
 pad[1] = player[1].pad
 
+//this is getting the values for the score
+var scoreBoard = document.querySelectorAll(`#score div`)
+
+console.dir(scoreBoard)
+
 
 //ball setup
 var ball = new Box();
@@ -113,6 +118,7 @@ function main()
         ball.x = c.width/2
         ball.y  =c.height/2
         player[1].score += 1
+
     }
 
     if(ball.x > c.width)//if the ball goes to the right of the screen
@@ -148,10 +154,14 @@ function main()
 
     }
 
-    console.log(player[0].score,"|",player[1].score)
-    
     //draw the objects
     p1.draw()
     p2.draw()
     ball.draw()
+
+    //this is adding the score to the code
+    for(var i = 0; i < scoreBoard.length; i++){
+        scoreBoard[i].innerHTML = player[i].score
+    }
 }
+
