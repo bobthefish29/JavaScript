@@ -14,11 +14,19 @@ p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
 
-
+//p2 setup
 var p2 = new Box();
 p2.w = 20
 p2.h = 150
 p2.x = c.width - p2.w/2
+
+//this is the arrary of player
+var player = [new Player(),new Player()];
+
+//this is giving the player pad the box object
+player[0].pad = new Box();
+player[1].pad = new Box();
+
 
 //ball setup
 var ball = new Box();
@@ -28,6 +36,7 @@ ball.vx = -2
 ball.vy = -2
 ball.color = `black`
 
+//the main game
 function main()
 {
     //erases the canvas
