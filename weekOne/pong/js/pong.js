@@ -108,23 +108,26 @@ function main()
 
 
     //ball collision 
-    if(ball.x < 0)
+    if(ball.x < 0)//this is if the ball goes to the left side of the screen
     {
         ball.x = c.width/2
         ball.y  =c.height/2
+        player[1].score += 1
     }
-    if(ball.x > c.width)
+
+    if(ball.x > c.width)//if the ball goes to the right of the screen
     {
         ball.x = c.width/2
         ball.y  = c.height/2
-        
+        player[0].score += 1
     }
-    if(ball.y < 0)
+    
+    if(ball.y < 0)//this is if the ball goes to the top
     {
         ball.y = 0
         ball.vy = -ball.vy
     }
-    if(ball.y > c.height)
+    if(ball.y > c.height)//if the ball goes to the bottom of the screen
     {
         ball.y = c.height
         ball.vy = -ball.vy
@@ -145,7 +148,8 @@ function main()
 
     }
 
-
+    console.log(player[0].score,"|",player[1].score)
+    
     //draw the objects
     p1.draw()
     p2.draw()
