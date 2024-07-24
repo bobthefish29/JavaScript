@@ -28,6 +28,13 @@ player[0].pad = new Box();
 player[1].pad = new Box();
 
 
+//this is the "arrary called pad"
+var pad = []
+
+pad[0] = player[0].pad
+pad[1] = player[1].pad
+
+
 //ball setup
 var ball = new Box();
 ball.w = 20
