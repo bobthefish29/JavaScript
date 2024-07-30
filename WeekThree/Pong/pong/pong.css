@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+
+
+section{
+    display: flex;
+    justify-content: center;
+    
+    font-size: 50px;
+    height: 60px;
+    width:800px;
+    border:1px solid red;
+    padding:0px;
+
+}
+
+
+canvas{
+    border:1px solid black;
+}
