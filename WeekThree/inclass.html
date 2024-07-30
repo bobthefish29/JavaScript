@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- this is an event lissiner, its in the html. -->
+    <p onClick="changeToRed(`red`)">Testing</p>
+
+    <!-- this is the java for the  -->
+    <script>
+        let p = document.querySelector(`p`)
+        
+        //
+        function changeToRed(color){
+            //this would be the colors
+            
+
+            p.style.color = color;
+
+        }
+
+        p.onmouseover = function(){
+            this.style.fontWeight = `bold`
+        }
+
+        //the keys => is an arrow function, `this.` is the root item.
+        //if you do e.target it is the thing we click on
+        //if you have one peramanter() you dont need the (), but if it takes two argements.
+        
+        p.onmouseout = (e)=> {
+            e.target.style.fontWeight = `normal`
+        }
+        p.onmouseout = e=> e.target.style.fontWeight = `normal`//this is another way of doing it.
+        // you dont need a return if its just one line, like this ^
+
+
+        //if you put the () after a function it would run anythime, but if you make a function you can have it
+        //function(e)
+        p.addEventListener(`click`, (e)=>{
+            //NUMBER() would cast anything as a number
+        }) 
+        //this would 
+        // p.removeEventListener(`click`, (e)=>{
+        //     //NUMBER() would cast anything as a number
+        // }) 
+
+
+
+
+        //this is a call back function
+        //you can put a defult value
+        function changeWord(newWord=`hello`, output=function(a){return a}){
+
+            p.innerText = newWord;
+            output(p.innerText)
+        }
+        //the hello man would run first, than it would do the function,
+        changeWord(`hello man`, function(a){alert(a)})
+
+    </script>
+
+
+
+</body>
+</html>

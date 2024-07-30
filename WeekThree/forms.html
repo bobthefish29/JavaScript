@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.google.com">google</a>
+
+    
+    <!-- this would set the valuses to the url
+    <form action="#" method="GET">
+        where name is is the var name 
+        <input type="text" placeholder="name" value="test" name="name">
+        <button>do somthing somthing</button>
+        <input type="submit" value="submit">
+        
+
+
+
+    </form>-->
+
+    <form action="#" method="GET">
+        
+        <input type="text" placeholder="name" value="" name="name" tabindex="1">
+        <button>do somthing somthing</button>
+        
+    </form>
+
+
+
+    <script>
+
+        var a = document.querySelector(`a`);
+        a.addEventListener(`click`, (e)=>{
+            e.preventDefault();
+            window.location=`https://www.neit.edu`;
+        })
+        //this is another way of doing this ^^
+        //document.querySelector(`a`).addEventListener(`click`,function())
+
+        var input = document.querySelector(`input`)
+
+        input.addEventListener(`focus`,(e)=>{
+            e.target.style.backgroundColor = `yellow`
+        })
+        
+        input.addEventListener(`blur`,(e)=>{
+            e.target.style.backgroundColor = `white`
+        })
+        //this could change based on if the user changes the value
+        input.addEventListener(`change`,(e)=>{
+            e.target.value = `why did you click off`
+        })
+
+        //this is for when the user trys to do an input
+        input.addEventListener(`input`,(e)=>{
+            e.target.value = `you cant change me`
+        })
+
+    </script>
+</body>
+</html>
