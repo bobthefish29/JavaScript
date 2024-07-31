@@ -4,7 +4,7 @@ var keys = [];
 //keydown code
 document.addEventListener(`keydown`, (e)=>{
     keys[e.key]=true;
-    console.log(e.key)
+    // console.log(e.key)
 })
 
 

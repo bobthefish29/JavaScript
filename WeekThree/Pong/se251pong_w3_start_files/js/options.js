@@ -6,6 +6,11 @@ options.addEventListener('click',e=>divs.classList.toggle("hidden"))
 
 var fill = qAll(`.fill`)
 
+var inputs = qAll('input')
+
+
+var playerKey = qAll(`input[type="text"]`)
+
 //this could be tossed in a loop
 fill[0].addEventListener(`input`, (e)=>{
     player[0].fill = e.target.value
@@ -18,8 +23,42 @@ fill[1].addEventListener(`input`, (e)=>{
     pad[1].fill = e.target.value
 })
 
+// inputs.forEach((i),(e)=>{
+//     i.addEventListener(`focus`,(e)=>{
+//         currentState = 'pause'
+//     })
+    
+//     i.addEventListener(`blur`,(e)=>{
+//         currentState = 'game'
+//     })
+// })
 
+playerKey.forEach((i, num)=>{
+    i.addEventListener('input',(e)=>{
 
+        
+        // if(playerKey[i].classList.value)
+        
+        
+        //this is the players input
+        if(playerKey[num].classList.value == "u"){
+            console.log(num)
+        }else if(playerKey[num].classList.value == "d"){
+            console.log("the value was d")
+        }else if(playerKey[num].classList.value == "s"){
+            console.log("the value was s")
+        }
+
+        
+        
+
+        
+
+    })//event listener
+
+    
+
+})//for each
 
 
 
