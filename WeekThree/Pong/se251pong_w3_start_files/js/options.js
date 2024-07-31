@@ -1,3 +1,9 @@
+var options = document.querySelector(`h2`)
+
+var divs = document.querySelector(`div[class="sides"]`)
+
+
+options.addEventListener('click',e=>divs.classList.toggle("hidden"))
 
 
 /*---------
