@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <!-- the type is the input field -->
+        <!-- <input type="range" min="0" max="255" disabled><span></span> -->
+        <!-- if you put number it would be a number -->
+        <input type="range" min="0" max="255" value="0"><input type="number">
+        <input type="range" min="0" max="255" value="0"><input type="number">
+        <input type="range" min="0" max="255" value="0"><input type="number">
+        <input type="color" >
+        <br>
+        <!-- adding check would make it checked -->
+        <input type="checkbox" name="colors" value="255">
+        <input type="checkbox" name="colors" value="255">
+        <input type="checkbox" name="colors" value="255">
+
+        <select>
+            <option>red</option>
+            <option>orange</option>
+            <option>black</option>
+        </select>
+
+        <input type="button" value="green">
+
+        <button>also a button, but can be changed by css</button>
+
+    </form>
+
+    <script>
+        //this is making it an arrayr
+        //you are able to seelect based on the type
+        var slider = Array.from(document.querySelectorAll('input[type="range"]'));
+
+        var number = Array.from(document.querySelectorAll('input[type="number"]'));
+
+        var picker = document.querySelector('input[type="color"]');
+
+        var check = Array.from(document.querySelectorAll('input[name="colors"]'));
+
+        //this is for 
+        var item = document.querySelector(`select`)
+        item.addEventListener('input',e=>{
+            document.querySelector(`body`).style.backgroundColor = e.target.value;
+        })
+
+
+        check.forEach((i, num)=>{
+            i.addEventListener('input',(e)=>{
+
+                if(i.checked == false)
+                    i.value=0
+                else
+                    i.value = 255
+                slider[num].value = i.value
+
+                console.log(check)
+                update()
+                //this is one way yo change the span
+                // i.nextElementSibling.innerHTML = i.value;
+                
+
+
+
+            })//event listener
+
+        })//for each
+
+        console.log(check)
+        update()
+
+        picker.addEventListener('input',e=>{
+            document.querySelector(`body`).style.backgroundColor = e.target.value;
+
+        })
+
+        
+
+        //the i would be each input
+        //num is the index number for the forEach numbers
+        slider.forEach((i, num)=>{
+            i.addEventListener('input',(e)=>{
+                number[num].value = i.value
+                update()
+                //this is one way yo change the span
+                // i.nextElementSibling.innerHTML = i.value;
+                
+
+
+
+            })//event listener
+
+        })//for each
+
+        number.forEach((i, num)=>{
+            i.addEventListener('input',(e)=>{
+                slider[num].value = i.value
+                update()
+                //this is one way yo change the span
+                // i.nextElementSibling.innerHTML = i.value;
+                
+
+
+
+            })//event listener
+
+        })//for each
+
+
+
+
+
+        //it will be the body at the start, than if i did want to change it it would
+        function update(tag='body'){
+            document.querySelector(tag).style.backgroundColor = `rgb(${slider[0].value},${slider[1].value},${slider[2].value})`
+        }
+
+
+        // document.querySelector('body').style.backgroundColor = `rgb(${slider[0].value},${slider[1].value},${slider[2].value})`
+        
+
+        //button vs submition
+        //check box
+        //raido button
+    </script>
+
+
+</body>
+</html>
