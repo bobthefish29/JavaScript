@@ -6,6 +6,8 @@ options.addEventListener('click',e=>divs.classList.toggle("hidden"))
 
 var fill = qAll(`.fill`)
 
+var stroke = qAll('.stroke')
+
 var inputs = qAll('input')
 
 var playerKey = qAll(`input[type="text"]`)
@@ -14,12 +16,21 @@ var playerKey = qAll(`input[type="text"]`)
 fill[0].addEventListener(`input`, (e)=>{
     player[0].fill = e.target.value
     pad[0].fill = e.target.value
-    
 })
 
 fill[1].addEventListener(`input`, (e)=>{
     player[1].fill = e.target.value
     pad[1].fill = e.target.value
+})
+
+stroke[0].addEventListener('input',(e)=>{
+    player[0].stroke = e.target.value
+    pad[0].stroke = e.target.value
+})
+
+stroke[1].addEventListener('input',(e)=>{
+    player[1].stroke = e.target.value
+    pad[1].stroke = e.target.value
 })
 
 
