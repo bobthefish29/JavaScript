@@ -8,7 +8,6 @@ var fill = qAll(`.fill`)
 
 var inputs = qAll('input')
 
-
 var playerKey = qAll(`input[type="text"]`)
 
 //this could be tossed in a loop
@@ -23,47 +22,44 @@ fill[1].addEventListener(`input`, (e)=>{
     pad[1].fill = e.target.value
 })
 
-// inputs.forEach((i),(e)=>{
-//     i.addEventListener(`focus`,(e)=>{
-//         currentState = 'pause'
-//     })
-    
-//     i.addEventListener(`blur`,(e)=>{
-//         currentState = 'game'
-//     })
-// })
 
+
+inputs.forEach((e)=>{ 
+    e.addEventListener('focus',(e)=>{
+        currentState = "pause"
+    })
+
+    e.addEventListener('blur',(e)=>{
+        currentState = "game"
+    })
+
+})
+
+
+//this is loop for running thought all the inputs
 playerKey.forEach((i, num)=>{
     i.addEventListener('input',(e)=>{
 
-        
-        // if(playerKey[i].classList.value)
-        
-        
         //this is the players input
-        if(playerKey[num].classList.value == "u"){
-            console.log(num)
-        }else if(playerKey[num].classList.value == "d"){
-            console.log("the value was d")
-        }else if(playerKey[num].classList.value == "s"){
-            console.log("the value was s")
+        //the way this works is that its checking if the class , and the index number of the player key list is the vlaue it would change that key
+        if(playerKey[num].classList.value == "u" && num < 2){//Ex this is checking if the class is u and if the value is less than 2
+            player[0].keys.u = playerKey[num].value
+        }else if(playerKey[num].classList.value == "d" && num < 2){
+            player[0].keys.d = playerKey[num].value
+        }else if(playerKey[num].classList.value == "s" && num <= 2){
+            player[0].keys.s = playerKey[num].value
+        }else if(playerKey[num].classList.value == "u" && num > 2){
+            player[1].keys.u = playerKey[num].value
+        }else if(playerKey[num].classList.value == "d" && num > 2){
+            player[1].keys.d = playerKey[num].value
+        }else if(playerKey[num].classList.value == "s" && num > 2){
+            player[1].keys.s = playerKey[num].value
         }
 
-        
-        
-
-        
 
     })//event listener
 
-    
-
 })//for each
-
-
-
-
-
 
 
 
