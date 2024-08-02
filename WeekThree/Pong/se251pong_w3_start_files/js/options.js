@@ -12,6 +12,10 @@ var inputs = qAll('input')
 
 var playerKey = qAll(`input[type="text"]`)
 
+var output = qAll('div[class="output"]')
+
+
+
 //this could be tossed in a loop
 fill[0].addEventListener(`input`, (e)=>{
     player[0].fill = e.target.value
@@ -22,12 +26,11 @@ fill[1].addEventListener(`input`, (e)=>{
     player[1].fill = e.target.value
     pad[1].fill = e.target.value
 })
-
+//this is for all the strokes
 stroke[0].addEventListener('input',(e)=>{
     player[0].stroke = e.target.value
     pad[0].stroke = e.target.value
 })
-
 stroke[1].addEventListener('input',(e)=>{
     player[1].stroke = e.target.value
     pad[1].stroke = e.target.value
@@ -39,37 +42,41 @@ inputs.forEach((e)=>{
     e.addEventListener('focus',(e)=>{
         currentState = "pause"
     })
-
     e.addEventListener('blur',(e)=>{
         currentState = "game"
     })
-
 })
+
+//this is changing the html
+//console.log(output[0].innerHTML)
+
 
 
 //this is loop for running thought all the inputs
 playerKey.forEach((i, num)=>{
     i.addEventListener('input',(e)=>{
-
         //this is the players input
         //the way this works is that its checking if the class , and the index number of the player key list is the vlaue it would change that key
         if(playerKey[num].classList.value == "u" && num < 2){//Ex this is checking if the class is u and if the value is less than 2
-            player[0].keys.u = playerKey[num].value
+            player[0].keys.u = playerKey[num].value//this is setting the inputed value to that key
+            output[num + 2].innerHTML = playerKey[num].value//this is changing the text to show the key the player is using
         }else if(playerKey[num].classList.value == "d" && num < 2){
             player[0].keys.d = playerKey[num].value
+            output[num + 2].innerHTML = playerKey[num].value
         }else if(playerKey[num].classList.value == "s" && num <= 2){
             player[0].keys.s = playerKey[num].value
+            output[num + 2].innerHTML = playerKey[num].value
         }else if(playerKey[num].classList.value == "u" && num > 2){
             player[1].keys.u = playerKey[num].value
+            output[num + 5].innerHTML = playerKey[num].value
         }else if(playerKey[num].classList.value == "d" && num > 2){
             player[1].keys.d = playerKey[num].value
+            output[num + 5].innerHTML = playerKey[num].value
         }else if(playerKey[num].classList.value == "s" && num > 2){
             player[1].keys.s = playerKey[num].value
+            output[num + 5].innerHTML = playerKey[num].value
         }
-
-
     })//event listener
-
 })//for each
 
 
