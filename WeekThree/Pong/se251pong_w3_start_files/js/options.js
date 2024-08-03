@@ -14,7 +14,9 @@ var playerKey = qAll(`input[type="text"]`)
 
 var output = qAll('div[class="output"]')
 
+var airadio = q('.airadio')
 
+let press = 0
 
 //this could be tossed in a loop
 fill[0].addEventListener(`input`, (e)=>{
@@ -36,19 +38,63 @@ stroke[1].addEventListener('input',(e)=>{
     pad[1].stroke = e.target.value
 })
 
+// airadio.addEventListener('click',(e)=>{
+
+//     if(press == 0){
+//         currentState = 'game'
+//         press += 1
+//     }
+//     else{
+//         currentState = `ai`
+//         press -= 1
+//     }
+
+// })
 
 
+
+
+
+
+//would want an if here for if the button is pressed
 inputs.forEach((e)=>{ 
     e.addEventListener('focus',(e)=>{
-        currentState = "pause"
+        //currentState = "pause"
+        if(press == 0){
+            currentState = "pause"
+        }
+        else{
+            currentState = `ai`
+        }       
     })
     e.addEventListener('blur',(e)=>{
-        currentState = "game"
+        
+        if(press == 0){
+            currentState = 'game'
+        }
+        else{
+            currentState = `ai`
+        }        
+
     })
 })
 
-//this is changing the html
-//console.log(output[0].innerHTML)
+
+airadio.addEventListener('click',(e)=>{
+    if(press == 0){
+        currentState = 'ai'
+        press += 1
+        output[11].innerHTML = currentState
+    }
+    else{
+        currentState = `game`
+        press -= 1
+        output[11].innerHTML = currentState
+    }
+})
+
+
+
 
 
 
@@ -79,9 +125,6 @@ playerKey.forEach((i, num)=>{
     })//event listener
 })//for each
 
-
-
-
 //this is where i will put the functions
 //this is really just the whole query selector
 function q(element){
@@ -93,25 +136,5 @@ function qAll(element){
     return obj;
 }
 
+//i am leaving off with just needing to add my own cration to the game, it can be anything i want. i am going to do an AI but its going to be hard
 
-
-
-
-/*---------
-    Program the two fill inputs to do the following:
-    . Display the correct colors on the inputs and outputs and paddles    
-    . using an `input` event
-        . Change the player's fill property to the value of the input
-        . Change the pad's fill property  to the player's fill property
-        . Show the fill's hex code in the output div 
-
------------*/
-
-/*---------
-    Program the six key inputs to do the following:
-    . Display the correct key names for each player   
-    . using a `keydown` event
-        .Display the correct key name in the input
-        .Change the player's key to the value of the input
-        .Show the player's key in the output div 
------------*/
