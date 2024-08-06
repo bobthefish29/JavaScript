@@ -20,7 +20,6 @@ var player = [
 ]
 
 
-
 init();
 
 //Main Game Loop
@@ -36,6 +35,8 @@ function init()
     //pad 1 and 2
     o[0] = new Box().setProps(player[0]).setProps({x:10, dir:1});
     o[1] = new Box().setProps(player[1]).setProps({x:c.width-10, dir:-1});
+    o[1].type=1;
+    
     //ball
     o[2] = new Box().setProps({w:20, h:20, vx:-2, vy:0, fill:`rgb(255,255,255)`});
     //goals 1 and 2
@@ -49,7 +50,8 @@ function init()
     ball = o[2]
     goals = [o[3], o[4]]
     scoreBoard = document.querySelectorAll(`#score div p`);
-    currentState = `game`;//need to change this to game for it to work############################
+    currentState = `game`;
+    o[1].target = ball
     //timer to make the game run at 60fps
     clearTimeout(timer);
     timer = setInterval(main, 1000/60);
@@ -120,7 +122,7 @@ states[`game`] = function()
             player[i].score++;
             scoreBoard[i].innerHTML = player[i].score;
         }
-        //this is if the ball colides with a player
+
         if(ball.collide(pad[i]))
         {
             ball.x = pad[i].x + pad[i].dir * (pad[i].w/2 + ball.w/2);
@@ -142,7 +144,8 @@ states[`game`] = function()
                     ball.vy = player[i].power;
                 }
             }
-        }//end of if
+        }
+
     }
     
     //draw the objects (Uses the array forEach function where i is the object stored in the o Array)
@@ -154,7 +157,6 @@ states[`game`] = function()
     })
 
 }
-
 
 states[`ai`] = function(){
 

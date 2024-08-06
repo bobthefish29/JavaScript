@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    <h1>My color page</h1>
+    <select>
+        <option> White </option>
+        <option> Black</option>
+    </select>
+
+    <input type="color">
+    <button>Save</button>
+    <button>Clear</button>
+
+    <script>
+        //setting the vars for the differernt selects
+        var bg = document.querySelector('select')
+        var body = document.querySelector('body')
+        var h1 = document.querySelector('h1')
+        var color = document.querySelector('input')
+        var button = document.querySelectorAll('button')
+
+        var settings = {
+            bg:'white',
+            color:'red',
+        }
+
+        if(typeof(Storage) !== undefined){
+            
+            settings = JSON.parse(localStorage.settings)
+
+            body.style.backgroundColor = settings.bg
+            h1.style.color = settings.color
+            bg.value = settings.bg
+            color.value = settings.color
+
+        }else{
+            
+        }
+
+        button[0].addEventListener('click', e=>{
+
+            settings.bg = bg.value
+            settings.color = color.value
+
+            body.style.backgroundColor = settings.bg
+            h1.style.color = settings.color
+
+            localStorage.setItem('settings', JSON.stringify(settings))
+            console.log(settings)
+            
+
+        })
+
+        button[1].addEventListener('click', e=>{
+            localStorage.clear()
+        })
+
+
+    </script>
+
+</body>
+</html>
