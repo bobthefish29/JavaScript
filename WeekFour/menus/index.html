@@ -30,22 +30,55 @@
     <script>
         var menus = document.querySelector(`#menus`);
 
+
+
         //loading icon code
         const loadDiv = document.createElement(`div`);
         loadDiv.setAttribute(`id`, `load`);
         menus.appendChild(loadDiv);
 
+
+
+        //this is the div for the button that will hold start
         const startMenu = document.createElement(`div`);
         startMenu.setAttribute(`id`, `start`);
-        startMenu.style.opacity =`0`;
+        startMenu.style.opacity =`0`;  
         
+        //this will hold all the other options
+        const lobbyMenu = document.createElement('div');
+        lobbyMenu.setAttribute('id', 'start-options')
+        lobbyMenu.style.opacity = '0';
+
+
+        //this is just making the start button
         const startButton = document.createElement(`button`);
         startButton.appendChild(document.createTextNode(`start`));
         startMenu.appendChild(startButton)
 
+
+        //this is making the "New button". it works by making the button, than it addeds the "new" text to the button
+        const newButton = document.createElement('button');
+        newButton.appendChild(document.createTextNode('New Game'));
+        newButton.setAttribute('data-load', 'false')
+        lobbyMenu.appendChild(newButton);
+
+        //this will be the making and adding of the contune button
+        const contButton = document.createElement('button');
+        contButton.appendChild(document.createTextNode('Continue'));
+        contButton.setAttribute('data-load', 'true')
+        lobbyMenu.appendChild(contButton);
+
+        const highScore = document.createElement('button');
+        highScore.appendChild(document.createTextNode('High Score'));
+        lobbyMenu.appendChild(highScore);        
+
+
+        //this is just making a high score element
         const highScores = document.createElement(`div`);
         highScores.setAttribute(`id`, `high-scores`);
 
+
+        //this is just loading the 
         var timer = setTimeout(loadStartMenu, 1000);
         function loadStartMenu(){
             $(`#load`).animate({opacity: 0}, 2000, function() {
@@ -55,12 +88,31 @@
             });
         }
 
+        //when you click the start button it will get ride of the button than it will who the two new buttons
         startButton.addEventListener(`click`, (e)=>{
             console.log(`hi`)
             $(`#start`).animate({opacity: 0}, 1000, function(){
-                window.location = `pong.html`
+                menus.appendChild(lobbyMenu)
+                $('#start-options').animate({opacity: 1},2000);
             });
         })
+
+        //This is the whole secctions for both new buttons
+        newButton.addEventListener('click',(e)=>{
+
+            menus.removeChild(lobbyMenu)
+            window.location = `pong.html?$load=${e.target.dataset.load}`
+
+        })
+        
+        contButton.addEventListener('click',(e)=>{
+
+            menus.removeChild(lobbyMenu)
+            window.location = `pong.html?$load=${e.target.dataset.load}`
+
+        })
+
+
 
     </script>
 </body>

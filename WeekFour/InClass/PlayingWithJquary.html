@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- after the data- is me -->
+    <p data-time="44">David Ppunchak</p>
+
+<script>
+    //this is really for sending data to other pages
+    var p = document.querySelector('p')
+
+    p.addEventListener('click',(e)=>{
+        window.location = `movingTopage.html?time=${e.target.dataset.time}&stuff=bird`//time is the "data-time=44" from the p tag
+    })
+    
+
+
+    //this is the whole code for a day, 
+    var date = new Date();
+    var p = document.querySelector('p')
+    var day = ['sun','mon','tue','wen','thr','Fri','sat']
+    //p.innerHTML = day[date.getDay()]
+
+    //this is getting the time sence the creation of the internet
+    //p.innerHTML = date.getTime()
+    //date.date.getDate(day)
+
+    var date2 = new Date();
+
+    var start = date2.getTime()
+
+    var end;
+
+    var timer = setTimeout(getNewTime, 5000)
+
+
+    function getNewTime(){
+
+        let date3 = new Date()
+        end = date3.getTime()
+        p.innerHTML = end - start
+    }
+
+
+
+</script>
+
+</body>
+</html>
