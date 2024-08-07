@@ -99,17 +99,17 @@
 
         //This is the whole secctions for both new buttons
         newButton.addEventListener('click',(e)=>{
-
-            menus.removeChild(lobbyMenu)
-            window.location = `pong.html?$load=${e.target.dataset.load}`
+            $(`#start-options`).animate({opacity: 0}, 1000, function(){
+                window.location = `pong.html?$load=${e.target.dataset.load}`
+            });
+            
+            
 
         })
-        
         contButton.addEventListener('click',(e)=>{
-
-            menus.removeChild(lobbyMenu)
-            window.location = `pong.html?$load=${e.target.dataset.load}`
-
+            $(`#start-options`).animate({opacity: 0}, 1000, function(){
+                window.location = `pong.html?$load=${e.target.dataset.load}`
+            });
         })
 
 
