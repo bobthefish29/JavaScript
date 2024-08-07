@@ -10,6 +10,8 @@ var stroke = qAll('.stroke')
 
 var inputs = qAll('input')
 
+var inputColor = qAll('input[type="color"]')
+
 var playerKey = qAll(`input[type="text"]`)
 
 var output = qAll('div[class="output"]')
@@ -37,22 +39,6 @@ stroke[1].addEventListener('input',(e)=>{
     player[1].stroke = e.target.value
     pad[1].stroke = e.target.value
 })
-
-// airadio.addEventListener('click',(e)=>{
-
-//     if(press == 0){
-//         currentState = 'game'
-//         press += 1
-//     }
-//     else{
-//         currentState = `ai`
-//         press -= 1
-//     }
-
-// })
-
-
-
 
 
 
@@ -98,9 +84,44 @@ airadio.addEventListener('click',(e)=>{
 
 
 
-//this is loop for running thought all the inputs
+
+
+output[0].innerHTML = pad[0].fill
+output[1].innerHTML = pad[0].stroke
+
+output[2].innerHTML = player[0].keys.u
+output[3].innerHTML = player[0].keys.d
+output[4].innerHTML = player[0].keys.s
+// output[5].innerHTML = pad[0].stroke
+
+output[6].innerHTML = pad[1].fill
+output[7].innerHTML = pad[1].stroke
+output[8].innerHTML = player[1].keys.u
+output[9].innerHTML = player[1].keys.d
+output[10].innerHTML = player[1].keys.s
+
+output[11].innerHTML = currentState
+
+console.log(inputColor)
+
+
+
+inputColor[0] = player[0].fill
+
+
+fill[0].addEventListener('input',(e)=>{output[0].innerHTML = e.target.value})
+fill[1].addEventListener('input',(e)=>{output[6].innerHTML = e.target.value})
+
+
+stroke[0].addEventListener('input',(e)=>{output[1].innerHTML = e.target.value})
+stroke[1].addEventListener('input',(e)=>{output[7].innerHTML = e.target.value})
+
+
+//this is loop for running thought when there is an input
 playerKey.forEach((i, num)=>{
+
     i.addEventListener('input',(e)=>{
+        
         //this is the players input
         //the way this works is that its checking if the class , and the index number of the player key list is the vlaue it would change that key
         if(playerKey[num].classList.value == "u" && num < 2){//Ex this is checking if the class is u and if the value is less than 2
@@ -122,6 +143,14 @@ playerKey.forEach((i, num)=>{
             player[1].keys.s = playerKey[num].value
             output[num + 5].innerHTML = playerKey[num].value
         }
+        
+        //this is the colors
+        output[0].innerHTML = pad[0].fill
+        output[1].innerHTML = pad[0].stroke
+
+        output[6].innerHTML = pad[1].fill
+        output[7].innerHTML = pad[1].stroke
+
     })//event listener
 })//for each
 
