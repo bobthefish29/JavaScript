@@ -80,10 +80,12 @@ airadio.addEventListener('click',(e)=>{
 })
 
 
+inputColor[0].value = pad[0].fill
+inputColor[1].value = pad[0].stroke
 
 
-
-
+inputColor[2].value = pad[1].fill
+inputColor[3].value = pad[1].stroke
 
 
 output[0].innerHTML = pad[0].fill
@@ -102,7 +104,7 @@ output[10].innerHTML = player[1].keys.s
 
 output[11].innerHTML = currentState
 
-console.log(inputColor)
+
 
 
 
