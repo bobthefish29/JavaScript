@@ -90,7 +90,7 @@
 
         //when you click the start button it will get ride of the button than it will who the two new buttons
         startButton.addEventListener(`click`, (e)=>{
-            console.log(`hi`)
+            
             $(`#start`).animate({opacity: 0}, 1000, function(){
                 menus.appendChild(lobbyMenu)
                 $('#start-options').animate({opacity: 1},2000);
@@ -100,18 +100,21 @@
         //This is the whole secctions for both new buttons
         newButton.addEventListener('click',(e)=>{
             $(`#start-options`).animate({opacity: 0}, 1000, function(){
-                window.location = `pong.html?$load=${e.target.dataset.load}`
+                window.location = `lobby.html?$load=${e.target.dataset.load}`
             });
-            
-            
-
         })
         contButton.addEventListener('click',(e)=>{
             $(`#start-options`).animate({opacity: 0}, 1000, function(){
-                window.location = `pong.html?$load=${e.target.dataset.load}`
+                window.location = `lobby.html?$load=${e.target.dataset.load}`
             });
         })
 
+        highScore.addEventListener('click',(e)=>{
+            $(`#start-options`).animate({opacity: 0}, 1000, function(){
+                window.location = `hs.html`
+            });
+
+        })
 
 
     </script>
