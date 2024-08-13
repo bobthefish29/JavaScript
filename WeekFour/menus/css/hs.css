@@ -12,3 +12,7 @@
     text-align: center;
 }
 
+.ScoreDiv{
+    display: flex;
+    justify-content: space-between;
+}

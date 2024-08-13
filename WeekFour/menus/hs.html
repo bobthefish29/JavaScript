@@ -16,28 +16,50 @@
         <section class="blank"></section>
         <section id="content">
             <div id="menus">
-            <h2>HIGH SCORES</h2>
-            <!-- This is what your final html will look like
-                <div id="high-scores">
-                    //scores go here.
-                </div>
-            -->
+                <h2>HIGH SCORES</h2>
+                <!-- This is what your final html will look like
+                    <div id="high-scores">
+                        //scores go here.
+                    </div>
+                -->
             </div>
         </section>
         <section class="blank"></section>
     </main>
     <script>
+
+        var message = "";
+
+
+        var menus = document.querySelector(`#menus`);
+
+        const highScores = document.createElement(`div`);
+        highScores.setAttribute(`id`, `high-scores`);
+
         var highScoreList = [
             {name:`aaa`, score:1000},
             {name:`bbb`, score:980}
         ]
         
-        //
-        var menus = document.querySelector(`#menus`);
+        menus.appendChild(highScores)
 
-    
+        //this is adding the lables for the score
+        message += `<div class="ScoreDiv"><p>Name</p><p>Score</p></div>`
 
-        
+        //this is the loop for looping thought the items for the div
+        for(i in highScoreList){
+            let temp = highScoreList[i]
+            message += '<div class="ScoreDiv">'
+            for(l in temp){
+                message += `<p>`
+                message += `${temp[l]}` + `\t`
+                message += `</p>`
+            }
+            message += `</div>`
+        }
+
+        //adding the html to the message
+        highScores.innerHTML = message;
     </script>
 </body>
 </html>
