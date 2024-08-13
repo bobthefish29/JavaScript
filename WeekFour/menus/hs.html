@@ -47,7 +47,7 @@
         message += `<div class="ScoreDiv"><p>Name</p><p>Score</p></div>`
 
         //this is the loop for looping thought the items for the div
-        for(i in highScoreList){
+        for(let i = 0; i < highScoreList.length; i++){
             let temp = highScoreList[i]
             message += '<div class="ScoreDiv">'
             for(l in temp){
