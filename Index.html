@@ -6,29 +6,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>David Punchak | Java ProjectHub</title>
         <link rel="stylesheet" href="CSS/Main.css"> 
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     </head>
     <!-- the body will just be the body -->
     <body>
-        <nav><p>test</p></nav>
+        <nav>
+            <div>
+                <a href="WeekOne/pong/index.html">The Basic Pong Game</a>
+                <a href="WeekThree/Pong/se251pong_w3_start_files/index.html">more Advanced Pong</a>
+                <a href="WeekFour/menus/index.html">More More Advanced Pong</a>
+            </div>
+        </nav>
         <!-- might just be a big clock with the date and week  -->
-        <article>SLide show</article>
+        <article>Slide show | my hope for this is to make it a interactive slide show of my projects in the class. </article>
         <main>
+
+            <content>content | This will be an ad</content>
+
+
+
+
+
+            <!-- this is the main content of the page -->
             <Section>
-                <h4>Title</h4>
-                <div></div>
-                <input type="button">
+                <div>
+                    <h3>What Is This?</h3>
+                    <span>This Whole page is really just a project I started working on one night and just wanted to see how much I could work on in one night. The current time on the night of doing this is Thursday, 8/14/2024 : 12:02am. It would be cool if this page could one day be somthing more than just a landing page for java class.</span>
+                </div>
+                <div>
+                    <h3>Why did i do this?</h3>
+                    <span>I was Board</span>
+                </div>
+                <div>How are you?<input type="text"><p id="funnyOutput"></p></div>
+
             </Section>
-            <Section>section 2</Section>
-            <Section>section 3</Section>
-            <Section>section 4</Section>
-            <Section>section 5</Section>
-            <Section>section 6</Section>
-            <Section>section 7</Section>
-            <Section>section 8</Section>
-            <Section>section 9</Section>
-            <Section>section 10</Section>
+
+
+
+
+
+
+
+
+
+
+
+            <aside>aside | this will be an ad</aside>
+
+
+
         </main>
-        <footer>footer</footer>
+        <footer>David Punchak &copy; 2024 | NEIT</footer>
 
 
 
@@ -63,7 +91,32 @@
 
 
 
-        
+
+        <!-- this is going to be my whole java script pages.    This page its self will have the linking java first than the script data, so that the data gets loaded first than than page. -->
+
         <script src="JS/Main.js"></script>
+        <script>
+                let section = document.querySelector(`section`)
+                let jokeInput = document.querySelector(`input[type="text"]`)
+
+                let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave you</p>"
+
+                let funnyOutput = document.querySelector(`#funnyOutput`)
+
+                console.log(funnyOutput)
+
+
+                jokeInput.addEventListener(`input`, (e)=>{
+                    console.log(jokeInput)
+                    $(`div`).animate({opacity: 0}, 6000, function(){
+                        section.innerHTML = myAnswer;
+    
+                    });
+                })
+
+
+
+
+        </script>
     </body>
 </html>
