@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/* example of a media quary for making the thing responsive */
+/* @media screen and (max-width: 600px) {
+    div.example {
+    display: none;
+    }
+} */
+html{
+    height: 100%;
+    background-color: black;
+}
+body{
+    margin: 0%;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0px;
+    height: 1000px;
+    margin: 0%;
+    border: 1px solid black;
+}
+nav{
+    background-color: aqua;
+    height: 50px;
+    width: 100%;
+    border: 2px solid black;
+    
+    padding: 0%;
+    display: flex;
+    position: fixed;
+    
+}
+article{
+    padding-top: 50px;
+    background-color: black;
+    color:white;
+    height: 40%;
+}
+main{
+    display: flex;
+    height: 100%;
+    background-color: blueviolet;
+}
+section{
+    background-color: chartreuse;
+    height:30%;
+    width: 20px;
+    
+}
+footer{
+    
+    background-color: red;
+}
