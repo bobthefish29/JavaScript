@@ -16,7 +16,7 @@ body{
     justify-content: space-between;
     flex-direction: column;
     padding: 0px;
-    height: 1000px;
+    height:100%;
     margin: 0%;
     border: 1px solid black;
 }
@@ -42,11 +42,28 @@ nav div{
 }
 
 article{
+    
     padding-top: 50px;
+    padding-bottom: 50px;
     background-color: black;
     color:white;
     height: 60%;
+    border:1px solid green;
+    display:flex;
 }
+
+article section{
+    width: 100%;
+    margin: 20px;
+    height: 100%;
+    
+    background-color: orange;
+}
+
+
+
+
+
 main{
     display: flex;
     justify-content: space-between;

@@ -18,15 +18,16 @@
             </div>
         </nav>
         <!-- might just be a big clock with the date and week  -->
-        <article>Slide show | my hope for this is to make it a interactive slide show of my projects in the class. </article>
+        <article >
+
+            <section id="SlideShowHolder">
+
+
+            </section>
+            
+        </article>
         <main>
-
             <content>content | This will be an ad</content>
-
-
-
-
-
             <!-- this is the main content of the page -->
             <Section>
                 <div>
@@ -41,44 +42,10 @@
 
             </Section>
 
-
-
-
-
-
-
-
-
-
-
             <aside>aside | this will be an ad</aside>
-
-
 
         </main>
         <footer>David Punchak &copy; 2024 | NEIT</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!-- <h1>Pong</h1>
@@ -99,7 +66,7 @@
                 let section = document.querySelector(`section`)
                 let jokeInput = document.querySelector(`input[type="text"]`)
 
-                let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave you</p>"
+                let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave</p>"
 
                 let funnyOutput = document.querySelector(`#funnyOutput`)
 
@@ -113,6 +80,22 @@
     
                     });
                 })
+
+
+                
+                const SlideShowDisplay = document.createElement(`div`)
+                SlideShowDisplay.setAttribute(`id`, `slideShowDisplay`)
+                
+
+                const project = document.createElement('p')
+                project.appendChild(document.createTextNode(`start`));
+
+                SlideShowDisplay.appendChild(project)
+
+                let 
+
+
+                let SlideShowDisplayText = document.querySelector(`#SlideShowHolder`)
 
 
 
