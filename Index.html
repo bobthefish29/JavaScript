@@ -18,9 +18,9 @@
             </div>
         </nav>
         <!-- might just be a big clock with the date and week  -->
-        <article >
+        <article id="slideShowArtical">
 
-            <section id="SlideShowHolder">
+            <section id="SlideShowSection">
 
 
             </section>
@@ -83,6 +83,9 @@
 
 
                 
+
+                //this is the start of the slide show section
+
                 const SlideShowDisplay = document.createElement(`div`)
                 SlideShowDisplay.setAttribute(`id`, `slideShowDisplay`)
                 
@@ -92,10 +95,14 @@
 
                 SlideShowDisplay.appendChild(project)
 
-                let 
+                
+
+                
+                let SlideShowDisplayText = document.querySelector(`#SlideShowSection`)
 
 
-                let SlideShowDisplayText = document.querySelector(`#SlideShowHolder`)
+                SlideShowDisplayText.appendChild(SlideShowDisplay)
+                console.log(SlideShowDisplayText)
 
 
 
