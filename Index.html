@@ -84,32 +84,156 @@
 
                 
 
+
+
+
+            
+                
                 //this is the start of the slide show section
 
+                //this is how to get to a different page
+                // let test = window.location = `Test.html`
 
                 // const Pages = [[test = window.location = `Test.html`], window.location = `Test2.html` ]
 
                 // console.log(Pages)
 
-                const SlideShowDisplay = document.createElement(`div`)
-                SlideShowDisplay.setAttribute(`id`, `slideShowDisplay`)
+
+                //the way its going to work is the pink sections are going to be cards, than the orange will be a photo of the project, when you have a different card slected you will get a different item
+
+
+
+
+                // class ProjectClass{
+
+                //     constructor(){
+                //         this.projectDiv = `<div></div>`
+                //         this.projectLabel = `<h3></h3>`
+                //         this.projectButton = `<button></button>`
+                    
+
+
+
+
+
+
+
+
+                //         return this
+                //     }
+
+
+
+
+
+
+                // }
+
+                // let helpme = new ProjectClass
+
+                // console.log(helpme.projectDiv)
+
+                
+                // function testing1()
+                // {
+                //     let temp = document.querySelector(`body`)
+
+                //     console.log(temp.innerHTML)
+                //     temp.innerHTML = helpme.projectImage
+                //     console.log(temp.innerHTML)
+                    
+                // }
+
+
+                // testing1()
+
+                let list = [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        
+                        
+                ]
+
+
+                // const SlideShowDisplay = document.createElement(`div`)
+                // SlideShowDisplay.setAttribute(`id`, `slideShowDisplay`)
                 
 
-                const project = document.createElement('p')
-                project.appendChild(document.createTextNode(`start`));
+                
+                let project;
+                let SlideShowDisplay;
+                let slideShowButton;
+                let projectLabel;
+                let projectImage;
 
-                SlideShowDisplay.appendChild(project)
+
+
+
+                let SlideShowDisplaySection = document.querySelector(`#SlideShowSection`)
 
                 
 
+                for(let i = 0; i <= list.length; i++){
+                    // this is making a new pink section, 
+                    SlideShowDisplay = document.createElement(`div`)
+                    SlideShowDisplay.setAttribute(`class`, `slideShowDisplay`)
+
+                    // this is making a black section the making of the div
+                    project = document.createElement('div')
+                    project.setAttribute(`class`,`slideShowDiv`)
+                    
+
+
+                    projectLabel = document.createTextNode(`Test${i}`)
+                    projectImage = document.createElement(`img`)
+                    projectImage.setAttribute(`src`, `test`)
+                    
+                    slideShowButton = document.createElement(`button`)
+                    
+
+
+                    project.appendChild(projectLabel);
+                    project.appendChild(projectImage);
+                    project.appendChild(slideShowButton);
+
+                    
+
+                    
+
+
+
+
+                    //Adding to the items
+                    SlideShowDisplay.appendChild(project)
+
+                    SlideShowDisplaySection.appendChild(SlideShowDisplay)
+
+                }
+
                 
-                let SlideShowDisplayText = document.querySelector(`#SlideShowSection`)
 
 
-                SlideShowDisplayText.appendChild(SlideShowDisplay)
-                console.log(SlideShowDisplayText)
 
 
+
+                // SlideShowDisplay.appendChild(project)
+
+                
+
+
+
+
+                
+
+
+                // SlideShowDisplayText.appendChild(SlideShowDisplay)
+                // console.log(SlideShowDisplayText)
+
+                // the ending of the slide show java
 
 
         </script>
