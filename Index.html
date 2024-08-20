@@ -19,12 +19,8 @@
         </nav>
         <!-- might just be a big clock with the date and week  -->
         <article id="slideShowArtical">
-
             <section id="SlideShowSection">
-
-
             </section>
-            
         </article>
         <main>
             <content>content | This will be an ad</content>
@@ -60,180 +56,115 @@
 
 
         <!-- this is going to be my whole java script pages.    This page its self will have the linking java first than the script data, so that the data gets loaded first than than page. -->
-
+        <!-- main has nothing for now -->
         <script src="JS/Main.js"></script>
+        <!-- this whole section for project is just for adding the project, movement is going to be used for movemetns -->
+        <script src="JS/project.js"></script>
+        <script src="JS/Movements.js"></script>
         <script>
-                let section = document.querySelector(`section`)
-                let jokeInput = document.querySelector(`input[type="text"]`)
+                //This is the Start of the java
+                //this is where i am going to be defining Perment values 
 
-                let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave</p>"
+                //this is the movment temp
+                moveTemp = new Movements()
 
-                let funnyOutput = document.querySelector(`#funnyOutput`)
-
-                console.log(funnyOutput)
-
-
-                jokeInput.addEventListener(`input`, (e)=>{
-                    console.log(jokeInput)
-                    $(`div`).animate({opacity: 0}, 6000, function(){
-                        section.innerHTML = myAnswer;
-    
-                    });
-                })
-
-
-                
-
-
-
-
+                var artcalDicplay = document.querySelector(`#slideShowArtical`)
             
-                
-                //this is the start of the slide show section
-
-                //this is how to get to a different page
-                // let test = window.location = `Test.html`
-
-                // const Pages = [[test = window.location = `Test.html`], window.location = `Test2.html` ]
-
-                // console.log(Pages)
+                // artcalDicplay.addEventListener('mouseover',(e)=>moveTemp.hover())
 
 
-                //the way its going to work is the pink sections are going to be cards, than the orange will be a photo of the project, when you have a different card slected you will get a different item
+                // var test = document.querySelectorAll(`#slideShowDisplay`)
+                // console.log(test)
 
 
+                // let false = false;
 
+                artcalDicplay.addEventListener('onscroll', (e)=>{
+                    console.log('test')
+                    $("#slideShowArtical").bind("mouseover", function (e) {
+                        // e = e || window.event; 
+                        var cursor = { x: 0 }; 
+                        cursor.x = e.pageY; //Cursor YPos
+                        var papaWindow = parent.window;
+                        var $pxFromTop = $(papaWindow).scrollTop();
+                        var $userScreenHeight = $(papaWindow).height();
 
-                // class ProjectClass{
+                        if (cursor.y > (($userScreenHeight + $pxFromTop) / 1.15)) {
 
-                //     constructor(){
-                //         this.projectDiv = `<div></div>`
-                //         this.projectLabel = `<h3></h3>`
-                //         this.projectButton = `<button></button>`
-                    
+                            if ($pxFromTop < ($userScreenHeight * 3.2)) {
+                                papaWindow.scrollBy(0, ($userScreenHeight / 30));
+                            }
+                        }else if (cursor.y < (($userScreenHeight + $pxFromTop) * 0.75)) {
+                            papaWindow.scrollBy(0, -($userScreenHeight / 30));
+                        }
+                    });
+                });
 
-
-
-
-
-
-
-
-                //         return this
-                //     }
-
-
-
-
-
-
-                // }
-
-                // let helpme = new ProjectClass
-
-                // console.log(helpme.projectDiv)
 
                 
-                // function testing1()
-                // {
-                //     let temp = document.querySelector(`body`)
+                $("#slideShowArtical").bind("mouseover", function (e) {
+                    e = e || window.event; var cursor = { y: 0 }; cursor.y = e.pageY; //Cursor YPos
+                    var papaWindow = parent.window;
+                    var $pxFromTop = $(papaWindow).scrollTop();
+                    var $userScreenHeight = $(papaWindow).height();
 
-                //     console.log(temp.innerHTML)
-                //     temp.innerHTML = helpme.projectImage
-                //     console.log(temp.innerHTML)
-                    
-                // }
+                    if (cursor.y > (($userScreenHeight + $pxFromTop) / 1.15)) {
 
+                    if ($pxFromTop < ($userScreenHeight * 3.2)) {
 
-                // testing1()
+                    papaWindow.scrollBy(0, ($userScreenHeight / 30));
+                }
+                }
+                else if (cursor.y < (($userScreenHeight + $pxFromTop) * 0.75)) {
 
-                let list = [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        
-                        
-                ]
-
-
-                // const SlideShowDisplay = document.createElement(`div`)
-                // SlideShowDisplay.setAttribute(`id`, `slideShowDisplay`)
-                
-
-                
-                let project;
-                let SlideShowDisplay;
-                let slideShowButton;
-                let projectLabel;
-                let projectImage;
-
-
-
-
-                let SlideShowDisplaySection = document.querySelector(`#SlideShowSection`)
-
-                
-
-                for(let i = 0; i <= list.length; i++){
-                    // this is making a new pink section, 
-                    SlideShowDisplay = document.createElement(`div`)
-                    SlideShowDisplay.setAttribute(`class`, `slideShowDisplay`)
-
-                    // this is making a black section the making of the div
-                    project = document.createElement('div')
-                    project.setAttribute(`class`,`slideShowDiv`)
-                    
-
-
-                    projectLabel = document.createTextNode(`Test${i}`)
-                    projectImage = document.createElement(`img`)
-                    projectImage.setAttribute(`src`, `test`)
-                    
-                    slideShowButton = document.createElement(`button`)
-                    
-
-
-                    project.appendChild(projectLabel);
-                    project.appendChild(projectImage);
-                    project.appendChild(slideShowButton);
-
-                    
-
-                    
-
-
-
-
-                    //Adding to the items
-                    SlideShowDisplay.appendChild(project)
-
-                    SlideShowDisplaySection.appendChild(SlideShowDisplay)
+                papaWindow.scrollBy(0, -($userScreenHeight / 30));
 
                 }
+        });
 
+    
+                //let SSDisplay = document.querySelector(`#SlideShowDisplay`)
+                // for(let i = 0; i <= projectList.length; i++){
+
+                    
+                //     //this really prints
+
+                    
+                //     test[i].addEventListener('mouseover',(e)=>{console.log('test')})
+                
+                
+                // }
+
+
+                // test.forEach((e)=>{
+                //     console.log( `test`)
+                // })
+
+                // ///////////////////////////////////////////////the ending of the slide show java//////////////////////////////////
+
+
+                // //this is just a dumb little thing
+                // let section = document.querySelector(`section`)
+                // let jokeInput = document.querySelector(`input[type="text"]`)
+
+                // let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave</p>"
+
+                // let funnyOutput = document.querySelector(`#funnyOutput`)
+
+                // console.log(funnyOutput)
                 
 
+                // // section.addEventListener(`mouseover`,(e)=>{
+                // //     section.style.opacity = 0
+                // // })
 
-
-
-
-                // SlideShowDisplay.appendChild(project)
-
-                
-
-
-
-
-                
-
-
-                // SlideShowDisplayText.appendChild(SlideShowDisplay)
-                // console.log(SlideShowDisplayText)
-
-                // the ending of the slide show java
+                // jokeInput.addEventListener(`input`, (e)=>{
+                //     console.log(jokeInput)
+                //     $(`div`).animate({opacity: 0}, 6000, function(){
+                //         section.innerHTML = myAnswer;
+    
+                //     });
+                // })
 
 
         </script>

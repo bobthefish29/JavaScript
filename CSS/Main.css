@@ -68,38 +68,85 @@ nav div{
     width: 100%;
     margin: 10px;
     height: 100%;
-    
     display: flex;
     align-items: center;
     flex-direction: row;
     overflow: hidden;
     border:1px solid green;
     background-color: orange;
+    overflow: scroll;
+    scrollbar-width: none;
 }
+
+
+
 
 /* this is the pink section */
 /* changed to class */
 .slideShowDisplay{
     /* display: flex; */
+    /* padding: 0px;
+    margin: 0px; */
     width: 200px;
     background-color: pink;
+    height: 80%;
+    
+
+    /* @media (width > 1000px) {
+        .slideShowDisplay {
+            height: 100000000px;
+        }
+    } */
+
 }
 
+/* .slideShowDisplay {
+    animation: vibrate 0.3s linear infinite both;
+} */
+
+/* @media (width > 1000px) {
+    .slideShowDisplay {
+        height: 100000000px;
+    }
+} */
 
 
 .slideShowDiv{
     display: flex;
     height: inherit;
+
+
     
     
     flex-direction: column;
     justify-content: space-between;
+    
     background-color: black;
 
 }
 
 
+.projectLabel{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
 
+    background-color: red;
+}
+
+
+.projectImage{
+    height: 100%;
+    background-color: white;
+}
+
+.projectButton{
+
+    height: 30%;
+
+}
 
 
 /* this is going to be the whole section for the MAIN css*/
