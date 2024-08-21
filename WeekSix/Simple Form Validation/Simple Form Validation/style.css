@@ -24,3 +24,19 @@
 	display:none;
 }
 
+
+.errorColors{
+	color: red;
+}
+
+#show{
+
+	position: relative;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #aaa;
+	border: 1px solid black;
+	padding: 10px;
+	
+}
