@@ -1,0 +1,14 @@
+This is just what i want to work on
+
+
+Im looking into how to the nav, but i need to look into the slide show, i wont have wimt for a bit to work on it
+
+So the part i am doing is the css for the slide show, 
+
+so im thinking that i would have the slide show be like all there when the screen is in the full view 
+
+but when the screen goes to a smaller view than it would make it just show one of them and have it move through
+
+
+
+I need to add ID's to each of the sections so i can loop through the ID's or mabie some other way

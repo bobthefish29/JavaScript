@@ -6,15 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>David Punchak | Java ProjectHub</title>
         <link rel="stylesheet" href="CSS/Main.css"> 
+        <link rel="stylesheet" href="CSS/RandomStyles.css">
+        <link rel="stylesheet" href="CSS/MainMeida.css"> 
+
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     </head>
     <!-- the body will just be the body -->
     <body>
         <nav>
             <div>
-                <a href="WeekOne/pong/index.html">The Basic Pong Game</a>
-                <a href="WeekThree/Pong/se251pong_w3_start_files/index.html">more Advanced Pong</a>
-                <a href="WeekFour/menus/index.html">More More Advanced Pong</a>
+                <a href="Projetcs/WeekOne/pong/index.html">The Basic Pong Game</a>
+                <a href="Projetcs/WeekThree/Pong/se251pong_w3_start_files/index.html">more Advanced Pong</a>
+                <a href="Projetcs/WeekFour/menus/index.html">More More Advanced Pong</a>
+                <a href="Projetcs/WeekSix/Simple Form Validation/Simple Form Validation/week2lab.html">Simple form Valator</a>
             </div>
         </nav>
         <!-- might just be a big clock with the date and week  -->
@@ -42,131 +46,21 @@
 
         </main>
         <footer>David Punchak &copy; 2024 | NEIT</footer>
+        <!-- SO this is the end of the main html for the page, -->
+
+        
 
 
-        <!-- <h1>Pong</h1>
-        <a href="WeekOne/pong/index.html">The Basic Pong Game</a>
-        <br>
-        <a href="WeekThree/Pong/se251pong_w3_start_files/index.html">more Advanced Pong</a>
-        <br>
-        <a href="WeekFour/menus/index.html">More More Advanced Pong</a> -->
-
-
-
-
-
-        <!-- this is going to be my whole java script pages.    This page its self will have the linking java first than the script data, so that the data gets loaded first than than page. -->
-        <!-- main has nothing for now -->
-        <script src="JS/Main.js"></script>
+        
+        <!-- ------------############this is going to be my whole java script pages#############3------------->
+        <!-- #####First i want the making the items########## -->
         <!-- this whole section for project is just for adding the project, movement is going to be used for movemetns -->
         <script src="JS/project.js"></script>
-        <script src="JS/Movements.js"></script>
-        <script>
-                //This is the Start of the java
-                //this is where i am going to be defining Perment values 
-
-                //this is the movment temp
-                moveTemp = new Movements()
-
-                var artcalDicplay = document.querySelector(`#slideShowArtical`)
-            
-                // artcalDicplay.addEventListener('mouseover',(e)=>moveTemp.hover())
+        <!-- Than i want to make them work -->
+        <!-- This is just the main jave, it mostly have the functnality for most things-->
+        <script src="JS/Main.js"></script>
 
 
-                // var test = document.querySelectorAll(`#slideShowDisplay`)
-                // console.log(test)
 
-
-                // let false = false;
-
-                artcalDicplay.addEventListener('onscroll', (e)=>{
-                    console.log('test')
-                    $("#slideShowArtical").bind("mouseover", function (e) {
-                        // e = e || window.event; 
-                        var cursor = { x: 0 }; 
-                        cursor.x = e.pageY; //Cursor YPos
-                        var papaWindow = parent.window;
-                        var $pxFromTop = $(papaWindow).scrollTop();
-                        var $userScreenHeight = $(papaWindow).height();
-
-                        if (cursor.y > (($userScreenHeight + $pxFromTop) / 1.15)) {
-
-                            if ($pxFromTop < ($userScreenHeight * 3.2)) {
-                                papaWindow.scrollBy(0, ($userScreenHeight / 30));
-                            }
-                        }else if (cursor.y < (($userScreenHeight + $pxFromTop) * 0.75)) {
-                            papaWindow.scrollBy(0, -($userScreenHeight / 30));
-                        }
-                    });
-                });
-
-
-                
-                $("#slideShowArtical").bind("mouseover", function (e) {
-                    e = e || window.event; var cursor = { y: 0 }; cursor.y = e.pageY; //Cursor YPos
-                    var papaWindow = parent.window;
-                    var $pxFromTop = $(papaWindow).scrollTop();
-                    var $userScreenHeight = $(papaWindow).height();
-
-                    if (cursor.y > (($userScreenHeight + $pxFromTop) / 1.15)) {
-
-                    if ($pxFromTop < ($userScreenHeight * 3.2)) {
-
-                    papaWindow.scrollBy(0, ($userScreenHeight / 30));
-                }
-                }
-                else if (cursor.y < (($userScreenHeight + $pxFromTop) * 0.75)) {
-
-                papaWindow.scrollBy(0, -($userScreenHeight / 30));
-
-                }
-        });
-
-    
-                //let SSDisplay = document.querySelector(`#SlideShowDisplay`)
-                // for(let i = 0; i <= projectList.length; i++){
-
-                    
-                //     //this really prints
-
-                    
-                //     test[i].addEventListener('mouseover',(e)=>{console.log('test')})
-                
-                
-                // }
-
-
-                // test.forEach((e)=>{
-                //     console.log( `test`)
-                // })
-
-                // ///////////////////////////////////////////////the ending of the slide show java//////////////////////////////////
-
-
-                // //this is just a dumb little thing
-                // let section = document.querySelector(`section`)
-                // let jokeInput = document.querySelector(`input[type="text"]`)
-
-                // let myAnswer = "<p>Im not an AI. IDK what you say to this also you just broke my page, i cant beleave</p>"
-
-                // let funnyOutput = document.querySelector(`#funnyOutput`)
-
-                // console.log(funnyOutput)
-                
-
-                // // section.addEventListener(`mouseover`,(e)=>{
-                // //     section.style.opacity = 0
-                // // })
-
-                // jokeInput.addEventListener(`input`, (e)=>{
-                //     console.log(jokeInput)
-                //     $(`div`).animate({opacity: 0}, 6000, function(){
-                //         section.innerHTML = myAnswer;
-    
-                //     });
-                // })
-
-
-        </script>
     </body>
 </html>

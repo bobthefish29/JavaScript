@@ -6,19 +6,12 @@ const projectList = [
     [`title`,`link`,`Images/ProjectScreenShots/TestingImage.jpg`],
     [`title`,`link`,`Images/ProjectScreenShots/TestingImage.jpg`],
     [`title`,`link`,`Images/ProjectScreenShots/TestingImage.jpg`],
-    [`title2`,`link2`,`Images/ProjectScreenShots/TestingImage.jpg`]
+    [`title`,`link`,`Images/ProjectScreenShots/TestingImage.jpg`],
+    [`title`,`link`,`Images/ProjectScreenShots/TestingImage.jpg`]
+    
 ]
 
-///////////////////////////////////////////////////////////////////////////////////////
-//this is the start of the slide show section
-/////////////////////////////////////////////////////////////////////////////////////
-//the way its going to work is the pink sections are going to be cards, than the orange will be a photo of the project, when you have a different card slected you will get a different item
-//so what it would be is that when you hover over the pink you would change the opacity to full and the ones around less,
-//when its i would want it to sycle though a path
-
-//this is how to get to a different page
-// let test = window.location = `Test.html`
-
+////////////////############3-----------All this is doing is making the project div(pink section)
 
 ////////////This is where i am making the projects in the slide show/////////////////
 //THis is the vars
@@ -56,7 +49,6 @@ for(let i = 0; i < projectList.length; i++){
     projectImage.setAttribute(`class`, `projectImage`)
     projectImage.setAttribute(`src`, projectList[i][2])
 
-    // .style.opacity (to change the opasity)
 
     //this is making the button
     projectButton = document.createElement(`button`)

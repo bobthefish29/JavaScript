@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+
+/* rhis is for a the phone display  */
+@media screen and (max-width: 800px) {
+
+    /* this is just the artical */
+    #slideShowArtical{
+        padding-top: 70px;
+        padding-bottom: 50px;
+        /* background-color: black; */
+        color:white;
+        height: 60%;
+        border:1px solid white;
+        display:flex;
+        background: gray;
+    }
+    /* this is the orange section */
+    #SlideShowSection{
+        width: 100%;
+        margin: 10px;
+        /* height: 100%; */
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        overflow: hidden;
+        border:1px solid green;
+        background-color: orange;
+    }
+
+
+
+
+
+}
+
+
+
+
+/* This is for the middle screen */
+@media screen and (max-width: 1999px) {
+    
+
+    /* html{
+        display:none;
+
+    } */
+    
+
+}
+
+
+/*
+@media screen and (min-width: 2000px) {
+    
+
+    html{
+        display:none;
+
+    }
+
+} */
