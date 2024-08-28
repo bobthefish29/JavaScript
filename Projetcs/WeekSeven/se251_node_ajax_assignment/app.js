@@ -14,7 +14,7 @@ const readFile = (path)=>{
     {
       fs.readFile(path, `utf8`, (err, data) => {
         if (err) {
-         reject(err)
+          reject(err)
         }
         else
         {
@@ -24,6 +24,11 @@ const readFile = (path)=>{
     })
 }
 
+//this is just so i dont need to do localhost:80/ad
+app.get(`/`,(req,res)=>{
+  res.sendFile(`${__dirname}/public/testform.html`)
+
+})
 
 app.get(`/add`, (req, res)=>{
   const filePath = path.join(__dirname, `public`, `testform.html`)
@@ -33,7 +38,7 @@ app.get(`/add`, (req, res)=>{
 app.get('/jeep', async (req, res) => {
   var data = await readFile(`./data/jeep.json`);
   res.send(JSON.parse(data));
-  });
+});
 
 app.post('/jeep', async (req, res) => { 
     var oldData =  await readFile(`./data/jeep.json`)
@@ -50,11 +55,29 @@ app.post('/jeep', async (req, res) => {
     res.send(jsonString);
 });
 
+//this is the whole section for delete
 app.post('/delete', async (req, res) => { 
-  //add the delete functionality here.
-  //read in the jeep.json file
-  //splice out the correct index from the array
-  //write the file again
+  //so here we are getting the data
+  var oldData =  await readFile(`./data/jeep.json`)
+  //here we are setting the old data to a new data
+  var newData = await JSON.parse(oldData)
+  //this is sorting the data
+  var sortedData = await newData.sort((a,b)=>(a.year < b.year)?1:-1)
+  
+  await sortedData.splice(req.body,1)
+  
+  //soooo this is like "barrowed from you"
+  const jsonString = JSON.stringify(sortedData);
+    await fs.writeFile('./data/jeep.json', jsonString, err => {
+      if (err) {
+          console.log('Error writing file', err)
+      } else {
+          console.log('Successfully wrote file')
+      }
+    });
+  
+  //just sending the JSON back
+  res.send(jsonString);
 });
 
 //Start up the server on port 3000.
