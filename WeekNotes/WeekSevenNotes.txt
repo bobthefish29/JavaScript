@@ -1,0 +1,8 @@
+Node.js   express
+
+Ajax - asyncjronous javascript and xml 
+            featch function
+            promises - call backfunction
+            async await
+
+            
