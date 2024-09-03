@@ -62,7 +62,7 @@ app.post('/delete', async (req, res) => {
   //here we are setting the old data to a new data
   var newData = await JSON.parse(oldData)
   //this is sorting the data
-  var sortedData = await newData.sort((a,b)=>(a.year < b.year)?1:-1)
+  var sortedData = await newData.sort((a,b)=>(a.year - b.year)?1:-1)
   
   await sortedData.splice(req.body,1)
   
